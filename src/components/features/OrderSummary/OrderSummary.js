@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const OrderSummary = (props) => {
-  const totalPrice = calculateTotal(props.tripCost, props.options);
+  const totalPrice = calculateTotal(formatPrice(props.tripCost), props.options);
   const priceformat = formatPrice(totalPrice);
 
   return (

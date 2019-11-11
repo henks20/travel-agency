@@ -79,7 +79,7 @@
     "id": "adults",
     "name": "Adult guests",
     "type": "number",
-    "defaultValue": 2,
+    "defaultValue": 1,
     "price": "100%",
     "limits": {
       "min": 1,
