@@ -4,6 +4,7 @@ import styles from './OrderOption.scss';
 
 const OrderOptionNumber = ({ currentValue, limits, setOptionValue }) => (
   <div className={styles.number}>
+    {/* do obgadania proptypes currentValue - wywala blad - nie moge sie z nim uporac */}
     <input
       className={styles.inputSmall}
       type='number'
