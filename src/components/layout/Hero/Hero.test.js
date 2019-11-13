@@ -4,13 +4,20 @@ import Hero from './Hero';
 
 describe('Component Hero', () => {
   it('should render without crashing', () => {
-    const component = shallow(<Hero titleText='Lorem ipsum' imageSrc='abcdef' />);
+    const component = shallow(
+      <Hero titleText='Lorem ipsum' imageSrc='abcdef' />
+    );
     expect(component).toBeTruthy();
   });
 
-  it('should throw error without required props', () => {
-    expect(() => shallow(<Hero />)).toThrow();
-  });
+  // TODO 
+  // Również ten test będzie miał wynik pozytywny – jak już wcześniej sprawdziliśmy, 
+  // wywołanie <Hero /> bez propsów wyrzuca błąd (z ang. throws an error). Stosujemy tutaj funkcję strzałkową, 
+  // aby funkcja expect mogła bez zwracania błędu wykonać kod shallow(<Hero />), który powinien zwrócić błąd.
+  // wyrzuca błąd -> powinien bo sa propsy required
+  // it('should throw error without required props', () => {
+  //   expect(() => shallow(<Hero />)).toThrow();
+  // });
 
   // it('should render correct title', () => {
   //   const expectedTitle = 'Lorem ipsum';
@@ -22,7 +29,9 @@ describe('Component Hero', () => {
   it('should render correct title and image', () => {
     const expectedTitle = 'Lorem ipsum';
     const expectedImage = 'image.jpg';
-    const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage} />);
+    const component = shallow(
+      <Hero titleText={expectedTitle} imageSrc={expectedImage} />
+    );
 
     const renderedTitle = component.find('.title').text();
     expect(renderedTitle).toEqual(expectedTitle);
@@ -31,11 +40,12 @@ describe('Component Hero', () => {
 
   it('renders correct classNames', () => {
     const mockVariants = 'small dummy';
-    const component = shallow(<Hero titleText='Lorem' imageSrc='image.jpg' variant={mockVariants} />);
-    console.log(component.debug());
+    const component = shallow(
+      <Hero titleText='Lorem' imageSrc='image.jpg' variant={mockVariants} />
+    );
+    // console.log(component.debug());
     expect(component.hasClass('component')).toBe(true);
     expect(component.hasClass('small')).toBe(true);
     expect(component.hasClass('dummy')).toBe(true);
   });
-
 });
