@@ -4,21 +4,19 @@ import styles from './OrderOption.scss';
 
 const OrderOptionNumber = ({ currentValue, limits, setOptionValue }) => (
   <div className={styles.number}>
-    {/* do obgadania proptypes currentValue - wywala blad - nie moge sie z nim uporac */}
     <input
       className={styles.inputSmall}
       type='number'
-      value={currentValue}
+      value={parseInt(currentValue, 10)}
       min={limits.min}
       max={limits.max}
       onChange={e => setOptionValue(e.currentTarget.value)}
     />
-
   </div>
 );
 
 OrderOptionNumber.propTypes = {
-  currentValue: PropTypes.number,
+  currentValue: PropTypes.string,
   limits: PropTypes.object,
   setOptionValue: PropTypes.func,
 };
