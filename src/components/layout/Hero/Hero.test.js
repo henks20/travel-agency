@@ -10,25 +10,22 @@ describe('Component Hero', () => {
     expect(component).toBeTruthy();
   });
 
-  // *** wywala błąd ***
   // Również ten test będzie miał wynik pozytywny – jak już wcześniej sprawdziliśmy, 
   // wywołanie <Hero /> bez propsów wyrzuca błąd (z ang. throws an error). Stosujemy tutaj funkcję strzałkową, 
   // aby funkcja expect mogła bez zwracania błędu wykonać kod shallow(<Hero />), który powinien zwrócić błąd.
   // wyrzuca błąd -> powinien bo sa propsy required
   // moge oczekiwac ze jakas funkcja zwroci error i jest dobrze bo musi zwrocic error jak czegos nie dostanie komponent
   it('should throw error without required props', () => {
-    const component = shallow(<Hero />);
-    console.log(component.debug());
     expect(() => shallow(<Hero />)).toThrow();
-    expect(shallow(<Hero />)).toThrow();
-  }); // nie dziala !
-
-  it('should render correct title', () => {
-    const expectedTitle = 'Lorem ipsum';
-    const component = shallow(<Hero titleText={expectedTitle} />);
-    const renderedTitle = component.find('.title').text();
-    expect(renderedTitle).toEqual(expectedTitle);
   });
+
+  // Zakomentowana jako przykład, że będzie error bo imageSrc będzie undefined; isrequired a nie został podany
+  // it('should render correct title', () => {
+  //   const expectedTitle = 'Lorem ipsum';
+  //   const component = shallow(<Hero titleText={expectedTitle} />);
+  //   const renderedTitle = component.find('.title').text();
+  //   expect(renderedTitle).toEqual(expectedTitle);
+  // });
 
   it('should render correct title and image', () => {
     const expectedTitle = 'Lorem ipsum';

@@ -5,6 +5,7 @@ module.exports = {
   ],
   setupFiles: [
     '<rootDir>/enzyme.config.js',
+    'jest-prop-type-error',
   ],
   setupFilesAfterEnv: [],
   testMatch: [
