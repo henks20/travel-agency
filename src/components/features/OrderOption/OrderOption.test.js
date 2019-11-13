@@ -119,6 +119,43 @@ for (let type in optionTypes) {
         });
         break;
       }
+      case 'checkbox': {
+        /* tests for checkbox */
+        // it('contains labels and inputs', () => {
+        //   const labels = renderedSubcomponent.find('label');
+        //   expect(labels.length).toBe(mockProps.values.length);
+
+        //   const inputs = select.find('input');
+        //   expect(inputs.length).toBe(mockProps.values.length);
+        // });
+
+        // it('should run setOrderOption function on change', () => {
+        //   renderedSubcomponent.find('input').simulate('change', { currentTarget: { value: testValue } });
+        //   expect(mockSetOrderOption).toBeCalledTimes(1);
+        //   expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
+        // });
+        break;
+      }
+      case 'icons': {
+        /* tests for icons */
+
+        break;
+      }
+      case 'number': {
+        // it('contains labels and inputs', () => {
+        //   const labels = renderedSubcomponent.find('label');
+        //   expect(labels.length).toBe(mockProps.values.length);
+
+        //   const inputs = select.find('input');
+        //   expect(inputs.length).toBe(mockProps.values.length);
+        // });
+
+        // it('should run setOrderOption function on change', () => {
+        //   renderedSubcomponent.find('input').simulate('change', { currentTarget: { value: testValue } });
+        //   expect(mockSetOrderOption).toBeCalledTimes(1);
+        //   expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
+        // });
+      }
     }
   });
 }
