@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 const OrderOptionDate = ({ setOptionValue, options }) => (
   <div>
     <DatePicker
+      // selected={options && options.startDate || new Date()} lub options isrequired do proptypes
       selected={options.startDate || new Date()}
       onChange={date => setOptionValue(date)}
     />
@@ -15,6 +16,7 @@ const OrderOptionDate = ({ setOptionValue, options }) => (
 OrderOptionDate.propTypes = {
   setOptionValue: PropTypes.func,
   options: PropTypes.object,
+  // powinienem dodac tutaj options jako isrequired
 };
 
 export default OrderOptionDate;
