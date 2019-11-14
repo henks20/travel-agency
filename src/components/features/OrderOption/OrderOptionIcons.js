@@ -7,7 +7,7 @@ import { formatPrice } from '../../../utils/formatPrice.js';
 const OrderOptionIcon = ({ values, setOptionValue, options }) => {
   return (
     <div className={styles.icon}>
-      <div key='null' onClick={() => setOptionValue('')} className={styles.icon, options.accommodation === '' ? styles.iconActive : ''}>
+      <div name='null' key='null' onClick={() => setOptionValue('')} className={styles.icon, options.accommodation === '' ? styles.iconActive : ''}>
         <Icon name={'times-circle'} />
         <span>{'None'}</span>
       </div>
