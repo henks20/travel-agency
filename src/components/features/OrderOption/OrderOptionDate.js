@@ -4,13 +4,13 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 const OrderOptionDate = ({ setOptionValue, options }) => (
-  <div>
-    <DatePicker
-      // selected={options && options.startDate || new Date()} lub options isrequired do proptypes
-      selected={options.startDate || new Date()}
-      onChange={date => setOptionValue(date)}
-    />
-  </div>
+  // <div>
+  <DatePicker
+    // selected={options && options.startDate || new Date()} lub options isrequired do proptypes
+    selected={options.startDate || new Date()}
+    onChange={date => setOptionValue(date)}
+  />
+  // </div>
 );
 
 OrderOptionDate.propTypes = {
