@@ -57,7 +57,7 @@ const mockPropsForType = {
   date: { options: {} },
 };
 
-const testValue = mockProps.values[1].id;
+const testValue = mockProps.values[0].id;
 const testValueNumber = '3';
 
 for (let type in optionTypes) {
@@ -138,9 +138,7 @@ for (let type in optionTypes) {
           const mainDiv = renderedSubcomponent.find('div');
           expect(mainDiv).toBeTruthy();
         });
-        // *** NIE DZIAŁA ***
-        // nie moge zidenfytifkowac dlaczego nie dziala
-        // oczekuje xyz a dostaje aaa, czyzby cos na indexach  => at(2), ale przy zmianie tez nie dzialalo
+
         it('should run setOrderOption function on click', () => {
           const mainDiv = renderedSubcomponent.find('div');
           mainDiv.find('div').at(2).simulate('click');
@@ -187,14 +185,12 @@ for (let type in optionTypes) {
           const datePicker = renderedSubcomponent.find('DatePicker');
           expect(datePicker).toBeTruthy();
         });
-        // *** NIE DZIAŁA ***
-        // nie moge doprowadzić żeby działał test na on change
-        // probowałem DatePicker jako komponent nie string ale tez nie dzialalo
+
         it('should run setOrderOption function on change', () => {
           const datePicker = renderedSubcomponent.find('DatePicker');
           expect(datePicker).toBeTruthy();
 
-          renderedSubcomponent.find('DatePicker').simulate('change', testValue);
+          renderedSubcomponent.simulate('change', testValue);
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
