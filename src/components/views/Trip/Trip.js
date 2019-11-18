@@ -21,7 +21,7 @@ const Trip = ({ error, name, image, cost, days, description, country, intro }) =
     <Section>
       <Grid>
         <PageTitle text={name} />
-        <OrderForm tripCost={cost} />
+        <OrderForm tripCost={cost} name={name} country={country} />
       </Grid>
       <DetailsBox>
         <DetailsImage>
@@ -72,7 +72,6 @@ const Trip = ({ error, name, image, cost, days, description, country, intro }) =
         <Row>
           <Col xs={12}>
             <PageTitle text='Trip options' />
-            <OrderForm tripCost={cost} />
           </Col>
         </Row>
       </Grid>

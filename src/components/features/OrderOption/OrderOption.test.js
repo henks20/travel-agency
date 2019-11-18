@@ -38,7 +38,7 @@ const mockProps = {
     { id: 'aaa', icon: 'h-square', name: 'Lorem A', price: 0 },
     { id: 'xyz', icon: 'h-square', name: 'Lorem X', price: 100 },
   ],
-  required: 'false',
+  required: false,
   currentValue: 'aaa',
   price: '50%',
   limits: {
@@ -101,7 +101,7 @@ for (let type in optionTypes) {
           expect(select.length).toBe(1);
 
           const emptyOption = select.find('option[value=""]').length;
-          expect(emptyOption).toBe(0);
+          expect(emptyOption).toBe(1);
 
           const options = select.find('option').not('[value=""]');
           expect(options.length).toBe(mockProps.values.length);
